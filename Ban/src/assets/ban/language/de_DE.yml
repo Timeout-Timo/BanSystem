@@ -1,0 +1,15 @@
+# Deutsche Sprachdatei für BanSystem
+# Autor: Timeout
+
+# Das ist die deutsche Sprachdatei. 
+# Um die Sprache zu aktivieren, änder in der config.yml die language zu de_DE
+
+# Der Prefix des Plugins
+prefix: '&8[&4BanSystem&8] '
+
+# MySQL-Einstellungen
+mysql:
+  # Wenn die MySQL-Verbindung aufgebaut wird
+  connected: '&7Die &fMySQL-Verbindung &7wurde &aerfolgreich aufgebaut&7.'
+  # Wenn die MySQL-Verbindung fehlschlägt
+  failed: '&cDie MySQL-Verbindung konnte nicht hergestellt werden. Bitte überprüfe deine Einstellungen.'

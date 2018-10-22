@@ -1,0 +1,12 @@
+# Bukkit Configuration:
+
+# The Language of the System
+language: 'de_DE'
+
+# MySQL-Settings
+mysql:
+  host: 'localhost'
+  port: 3306
+  database: 'ban'
+  username: 'username'
+  password: 'password'

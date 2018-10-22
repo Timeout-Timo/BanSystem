@@ -1,0 +1,14 @@
+# Default Configuration for BanSystem
+# Version 2.0-DEV 
+# Author: Timeout
+
+# Enable IP-Ban
+ip: true
+
+#MySQL-Connection
+mysql:
+  host: 'localhost'
+  port: 3306
+  database: 'ban'
+  username: 'username'
+  password: 'password'

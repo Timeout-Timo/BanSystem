@@ -1,0 +1,27 @@
+# Deutsche Sprachdatei für das BanSystem
+# Autor: Timeout
+# Version: 2.0
+
+# Diese Datei ist für die Sprache der GUI zuständig.
+
+menu:
+  reason:
+    menu:
+      # Der Titel des Menus
+      title: '&2Reason &ahinzufügen'
+    remove:
+      # Der Titel des Entfernmenus
+      title: '&c%r entfernen?'
+    
+items:
+  reason:
+    menu:
+      # Name des Mute-Reason Items
+      mute: '&cMutegrund'
+      # Name des Ban-Reason Items
+      ban: '&4Bangrund'
+    remove:
+      # Name der Entfernbestätigung
+      yes: '&aJa, ich möchte diesen Grund löschen'
+      # Name der Entfernbehaltung
+      no: '&cNein, ich möchte diesen Grund behalten'

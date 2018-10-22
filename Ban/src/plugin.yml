@@ -1,0 +1,40 @@
+name: BanGUI
+version: 2.0-DEV
+author: Timeout
+description: The GUI for the BanSystem
+
+main: de.timeout.ban.gui.BukkitBan
+
+commands:
+  ban:
+    description: Ban a player
+  unban:
+    description: Unban a player
+  mute:
+    description: Mutes a player
+  unmute:
+    description: Unmutes a player
+  reason:
+    description: Manage Reasons
+    
+permissions:
+  ban.*:
+    description: The OP-Permission
+    default: op
+    children:
+      ban.ban: true
+      ban.mute: true
+      ban.reason: true
+  ban.ban:
+    description: The Ban-Permission
+  ban.mute:
+    description: The Mute-Permission
+  ban.reason:
+    description: The Reason-Permission
+    children:
+      ban.reason.add: true
+      ban.reason.remove: true
+  ban.reason.add:
+    description: Add Reasons
+  ban.reason.remove:
+    description: Remove Reasons

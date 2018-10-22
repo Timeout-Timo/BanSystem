@@ -1,0 +1,37 @@
+# Reasonfile for Reasons
+
+reasons:
+  hacking:
+    # The Displayname of the reason
+    display: '&4Hacking'
+    # the Type (BAN, MUTE)
+    type: BAN
+    # the bantime on the first stage
+    firststage: 
+      days: 10
+      hours: 0
+      minutes: 0
+      permanent: false
+    # The time on the second stage
+    secondstage:
+      days: 30
+      hours: 0
+      minutes: 0
+      permanent: false
+    # The last Stage of voilence
+    thirdstage:
+      days: 0
+      hours: 0
+      minutes: 0
+      permanent: true
+    # Activates Stage 2 at this amount of points
+    firstline: 500
+    # Activates Stage 3 at this amount of points
+    secondline: 1000
+    # Added points per ban
+    points: 250
+    # The ItemDesign
+    gui:
+      material: IRON_SWORD
+      subid: 0
+  #Here new reasons

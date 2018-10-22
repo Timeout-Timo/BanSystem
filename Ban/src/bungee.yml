@@ -1,0 +1,6 @@
+name: BanSystem
+version: 2.0-DEV
+author: Timeout
+description: A BanSystem with GUI's
+
+main: de.timeout.ban.Ban
