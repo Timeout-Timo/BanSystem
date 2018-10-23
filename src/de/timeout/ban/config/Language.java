@@ -1,13 +1,12 @@
 package de.timeout.ban.config;
 
 import de.timeout.ban.Ban;
-
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
 
-public enum Language {
+public enum Language implements Messageable {
 	
 	PREFIX("prefix"),
 	MYSQL_CONNECTED("mysql.connected"),
@@ -19,9 +18,11 @@ public enum Language {
 			.load(Ban.plugin.getResourceAsStream("assets/ban/language/de_DE.yml"));
 
 	private String path;
+	private String message;
 	
 	private Language(String path) {
 		this.path = path;
+		this.message = getMessageFromYaml();
 	}
 	
 	public static Language getLanguageByPath(String path) {
@@ -35,9 +36,13 @@ public enum Language {
 		return path;
 	}
 	
-	public String getMessage() {
-		String message = main.getConfigManager().getLanguageConfiguration().getString(path);
-		if(message != null) return ChatColor.translateAlternateColorCodes('&', message);
+	private String getMessageFromYaml() {
+		String yamlmessage = main.getConfigManager().getLanguageConfiguration().getString(path);
+		if(yamlmessage != null) return ChatColor.translateAlternateColorCodes('&', yamlmessage);
 		else return ChatColor.translateAlternateColorCodes('&', defaultFile.getString(path));
+	}
+	
+	public String getMessage() {
+		return message;
 	}
 }

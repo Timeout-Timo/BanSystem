@@ -1,8 +1,10 @@
 package de.timeout.ban.reason;
 
-public class Reason {
+import de.timeout.ban.Ban;
 
-	protected String name, prefix;
+public class Reason {
+	
+	protected String name, display;
 	protected long firstStage, secondStage, thirdStage;
 	protected ReasonType type;
 	protected int points, firstLine, secondLine;
@@ -13,7 +15,7 @@ public class Reason {
 	
 	public Reason(String name, String prefix, ReasonType type, long firstStage, long secondStage, long thirdStage, int firstLine, int secondLine, int points) {
 		this.name = name;
-		this.prefix = prefix;
+		this.display = prefix;
 		this.type = type;
 		this.firstStage = firstStage;
 		this.secondStage = secondStage;
@@ -79,12 +81,12 @@ public class Reason {
 		this.name = name;
 	}
 
-	public String getPrefix() {
-		return prefix;
+	public String getDisplay() {
+		return display;
 	}
 
-	public void setPrefix(String prefix) {
-		this.prefix = prefix;
+	public void setDisplay(String display) {
+		this.display = display;
 	}
 
 	public ReasonType getType() {
@@ -93,6 +95,11 @@ public class Reason {
 
 	public void setType(ReasonType type) {
 		this.type = type;
+	}
+	
+	public void uploadToMySQL() {
+		Ban.plugin.getMySQL().insert("INSERT INTO Reasons VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", name, display, type.name(), String.valueOf(firstStage), String.valueOf(secondStage), String.valueOf(thirdStage),
+				String.valueOf(firstLine), String.valueOf(secondLine), String.valueOf(points), null); 
 	}
 
 	public enum ReasonType {

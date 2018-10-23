@@ -9,7 +9,6 @@ import java.util.logging.Level;
 import de.timeout.ban.config.ProxyConfigCreator;
 import de.timeout.ban.config.ProxyConfigManager;
 import de.timeout.ban.sql.MySQL;
-
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;

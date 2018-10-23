@@ -57,7 +57,7 @@ public class ReasonFileConverter {
 		main.getMySQL().delete("DELETE FROM Reason WHERE 1");
 		reasons.forEach(reason -> main.getMySQL().insert("INSERT INTO Reason VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
 					reason.getName(),
-					reason.getPrefix(),
+					reason.getDisplay(),
 					reason.getType().name(),
 					String.valueOf(reason.getFirstStage()),
 					String.valueOf(reason.getSecondStage()),

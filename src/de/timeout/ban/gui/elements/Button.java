@@ -25,6 +25,10 @@ public class Button {
 		ItemStackAPI.removeEnchantments(item);
 	}
 	
+	public void press() {
+		activate = !activate;
+	}
+	
 	public boolean isActivated() {
 		return activate;
 	}

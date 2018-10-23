@@ -34,4 +34,8 @@ public class ConfirmGUI extends GUI {
 	public ItemStack getMiddle() {
 		return middle;
 	}
+	
+	public boolean getResult(ItemStack click) {
+		return menu.getItem(2).getItemMeta().getDisplayName().equalsIgnoreCase(click.getItemMeta().getDisplayName());
+	}
 }

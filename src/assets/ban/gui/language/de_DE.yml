@@ -4,6 +4,16 @@
 
 # Diese Datei ist für die Sprache der GUI zuständig.
 
+# Der Prefix des Plugins
+prefix: '&8[&4BanSystem&8] '
+
+message:
+  reason:
+    import: '&7Die Gründe wurden erfolgreich von der &6Datei ´&7in die &fMySQL-Datenbank übertragen&7.'
+    remove: 
+      success: '&cDer Grund mit dem Namen %n wurde erfolgreich entfernt.'
+      notfound: '&cDer eingegebenene Grund konnte nicht gfunden werden.'
+
 menu:
   reason:
     menu:
@@ -12,6 +22,15 @@ menu:
     remove:
       # Der Titel des Entfernmenus
       title: '&c%r entfernen?'
+    firststage:
+      # Der Titel des ClockMenus
+      title: '&6Strafzeit auf erster &aStufe'
+    secondstage:
+      # Der Titel des ClockMenus
+      title: '&6Strafzeit auf zweiter Stufe'
+    thirdstage:
+      # Der Title des ClockMenus
+      title: '&6Strafzeit auf finaler Stufe'
     
 items:
   reason:

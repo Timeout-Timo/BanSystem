@@ -5,19 +5,21 @@ import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import de.timeout.ban.gui.elements.Button;
 import de.timeout.utils.ItemStackAPI;
 import de.timeout.utils.Materials;
 
 public class ClockGUI extends GUI {
 	
-	private ItemStack days, hours, minutes, perma;
+	private ItemStack days, hours, minutes;
+	private Button perma;
 	
 	public ClockGUI(String title) {
-		this.menu = Bukkit.createInventory(null, 9*3, title);
+		this.menu = Bukkit.createInventory(null, 9*5, title);
 		this.days = ItemStackAPI.createItemStack(Materials.PAPER, 1, "Days");
 		this.hours = ItemStackAPI.createItemStack(Materials.PAPER, 1, "Hours");
 		this.minutes = ItemStackAPI.createItemStack(Materials.PAPER, 1, "Minutes");
-		this.perma = ItemStackAPI.createItemStack(Materials.BARRIER, 1, "§cPERMANENT");
+		this.perma = new Button(ItemStackAPI.createItemStack(Materials.BARRIER, 1, "§cPERMANENT"));
 		for(int i = 0; i < menu.getSize(); i++) menu.setItem(i, n);
 		
 		ItemStackAPI.setLore(days, "§70");
@@ -27,13 +29,13 @@ public class ClockGUI extends GUI {
 		ItemStack plus = ItemStackAPI.createItemStack(Materials.STAINED_GLASS_PANE, (short) 5, 1, "§a+");
 		ItemStack minus = ItemStackAPI.createItemStack(Materials.STAINED_GLASS_PANE, (short) 14, 1, "§c-");
 		
-		for(int i = 1; i < 8; i = i + 2) menu.setItem(i, plus);
-		for(int i = 19; i < 25; i = i + 2) menu.setItem(i, minus);
+		for(int i = 10; i < 17; i = i + 3) menu.setItem(i, plus); //10D, 13H, 16M
+		for(int i = 28; i < 35; i = i + 3) menu.setItem(i, minus); //28D, 31H, 34M 
 		
-		menu.setItem(10, days);
-		menu.setItem(13, hours);
-		menu.setItem(16, minutes);
-		menu.setItem(27, perma);
+		menu.setItem(19, days);
+		menu.setItem(22, hours);
+		menu.setItem(25, minutes);
+		menu.setItem(42, perma.getItem());
 	}
 	
 	public long getTimeMillis() {
@@ -67,5 +69,9 @@ public class ClockGUI extends GUI {
 	
 	public void removeDay() {
 		if(getTimeMillis() > 60000) ItemStackAPI.setLore(hours, String.valueOf("§7" + (getTime(days) -1)));
+	}
+	
+	public void pressPermaButton() {
+		perma.press();
 	}
 }
