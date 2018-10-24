@@ -20,6 +20,7 @@ public enum GUILanguage implements Messageable {
 	MESSAGE_REASON_HELP_REMOVE("message.reason.help.remove"),
 	MESSAGE_REASON_HELP_IMPORT("message.reason.help.import"),
 	MESSAGE_REASON_HELP_CONTINUE("message.reason.help.continue"),
+	MESSAGE_BAN_IGNORE("message.ban.ignore"),
 	MESSAGE_ERROR_PERMISSIONS("message.error.permissions"),
 	MENU_REASON_MENU_TITLE("menu.reason.menu.title"),
 	MENU_REASON_REMOVE_TITLE("menu.reason.remove.title"),
@@ -29,6 +30,7 @@ public enum GUILanguage implements Messageable {
 	MENU_REASON_FIRSTLINE_TITLE("menu.reason.firstline.title"),
 	MENU_REASON_SECONDLINE_TITLE("menu.reason.secondline.title"),
 	MENU_REASON_POINTS_TITLE("menu.reason.points.title"),
+	MENU_BAN_TITLE("menu.ban.title"),
 	ITEMS_CLOCK_DAYS("items.clock.days"),
 	ITEMS_CLOCK_HOURS("items.clock.hours"),
 	ITEMS_CLOCK_MINUTES("items.clock.minutes"),
@@ -37,7 +39,8 @@ public enum GUILanguage implements Messageable {
 	ITEMS_REASON_MENU_MUTE("items.reason.menu.mute"),
 	ITEMS_REASON_MENU_BAN("items.reason.menu.ban"),
 	ITEMS_REASON_REMOVE_YES("items.reason.remove.yes"),
-	ITEMS_REASON_REMOVE_NO("items.reason.remove.no");
+	ITEMS_REASON_REMOVE_NO("items.reason.remove.no"),
+	ITEMS_BAN_CUSTOMBAN_ITEM("items.reason.customban.item");
 	
 
 	private static BukkitBan main = BukkitBan.plugin;

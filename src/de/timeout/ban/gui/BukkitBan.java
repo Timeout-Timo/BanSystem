@@ -2,6 +2,7 @@ package de.timeout.ban.gui;
 
 import java.io.File;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.timeout.ban.gui.commands.ReasonCommand;
@@ -27,6 +28,8 @@ public class BukkitBan extends JavaPlugin {
 		this.mysql = new MySQL(getConfig().getString("mysql.host"), getConfig().getInt("mysql.port"), getConfig().getString("mysql.database"),
 				getConfig().getString("mysql.username"), getConfig().getString("mysql.password"));
 		registerCommands();
+		
+		Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(this, "BanSystem");
 	}	
 
 	@Override

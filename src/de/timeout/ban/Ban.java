@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import de.timeout.ban.command.TabCompleter;
 import de.timeout.ban.config.ProxyConfigCreator;
 import de.timeout.ban.config.ProxyConfigManager;
 import de.timeout.ban.sql.MySQL;
@@ -33,6 +34,12 @@ public class Ban extends Plugin {
 		this.mysql = new MySQL(config.getString("mysql.host"), config.getInt("mysql.port"), config.getString("mysql.database"),
 				config.getString("mysql.username"), config.getString("mysql.password"));
 		createTables();
+		
+		registerListener();
+	}
+	
+	private void registerListener() {
+		this.getProxy().getPluginManager().registerListener(this, new TabCompleter());
 	}
 	
 	public Configuration getConfig() {

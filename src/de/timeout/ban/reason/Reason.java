@@ -1,7 +1,5 @@
 package de.timeout.ban.reason;
 
-import de.timeout.ban.Ban;
-
 public class Reason {
 	
 	protected String name, display;
@@ -98,7 +96,7 @@ public class Reason {
 	}
 	
 	public void uploadToMySQL() {
-		Ban.plugin.getMySQL().insert("INSERT INTO Reasons VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", name, display, type.name(), String.valueOf(firstStage), String.valueOf(secondStage), String.valueOf(thirdStage),
+		de.timeout.ban.Ban.plugin.getMySQL().insert("INSERT INTO Reasons VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", name, display, type.name(), String.valueOf(firstStage), String.valueOf(secondStage), String.valueOf(thirdStage),
 				String.valueOf(firstLine), String.valueOf(secondLine), String.valueOf(points), null); 
 	}
 

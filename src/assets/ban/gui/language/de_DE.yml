@@ -22,8 +22,11 @@ message:
       remove: '&6/reason remove <Grund> &8| &cEntferne &7Gründe.'
       import: '&6/reason import &8| &7Importiere Gründe aus der &5reasons.yml&7.'
       continue: '&6/reason continue &8| &7Fahre an einem bereits angefangenen Grund &afort&7.'
+  ban:
+    ignore: '&cDu kannst den Spieler &4%p &cnicht bannen, da er die Ignore-Permission hat&7.'
   error:
     permissions: '&cDu hast nicht die benötigte Berechtigung, diesen Befehl auszuführen.'
+    invalidparameters: '&7Meintest du vielleich &6%c&7?'
 
 menu:
   reason:
@@ -51,6 +54,8 @@ menu:
     points:
       # Der Titel des Punkteanstieg
       title: '&6Anstieg der Punkte pro Straftat'
+  ban:
+    title: '&c%p bannen?'
     
 items:
   clock:
@@ -70,3 +75,7 @@ items:
       yes: '&aJa, ich möchte diesen Grund löschen'
       # Name der Entfernbehaltung
       no: '&cNein, ich möchte diesen Grund behalten'
+  ban:
+    customban:
+      item: '&cErweitere Banauswahl'
+  
