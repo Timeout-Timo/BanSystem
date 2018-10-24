@@ -1,9 +1,10 @@
-package de.timeout.ban.config;
+package de.timeout.ban.gui.config;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 
+import de.timeout.ban.config.ConfigManager;
 import de.timeout.ban.gui.BukkitBan;
 import de.timeout.utils.UTFConfig;
 

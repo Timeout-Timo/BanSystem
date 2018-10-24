@@ -8,7 +8,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
 
 import de.timeout.ban.gui.BukkitBan;
-import de.timeout.ban.gui.GUIReason;
+import de.timeout.ban.gui.elements.GUIReason;
 import de.timeout.ban.reason.Reason.ReasonType;
 import de.timeout.utils.ItemStackAPI;
 import de.timeout.utils.Materials;

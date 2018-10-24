@@ -1,4 +1,4 @@
-package de.timeout.ban.config;
+package de.timeout.ban.gui.config;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -11,6 +11,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.google.common.io.ByteStreams;
+
+import de.timeout.ban.config.ConfigCreator;
 
 public class BukkitConfigCreator extends ConfigCreator<JavaPlugin> {
 	

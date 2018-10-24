@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import de.timeout.ban.gui.config.GUILanguage;
 import de.timeout.ban.gui.elements.Button;
 import de.timeout.utils.ItemStackAPI;
 import de.timeout.utils.Materials;

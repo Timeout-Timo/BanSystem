@@ -4,8 +4,9 @@ import java.io.File;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.timeout.ban.config.BukkitConfigCreator;
-import de.timeout.ban.config.BukkitConfigManager;
+import de.timeout.ban.gui.commands.ReasonCommand;
+import de.timeout.ban.gui.config.BukkitConfigCreator;
+import de.timeout.ban.gui.config.BukkitConfigManager;
 import de.timeout.ban.sql.MySQL;
 import de.timeout.utils.UTFConfig;
 
@@ -25,6 +26,7 @@ public class BukkitBan extends JavaPlugin {
 		this.configmanager = new BukkitConfigManager(getConfig().getString("language"));
 		this.mysql = new MySQL(getConfig().getString("mysql.host"), getConfig().getInt("mysql.port"), getConfig().getString("mysql.database"),
 				getConfig().getString("mysql.username"), getConfig().getString("mysql.password"));
+		registerCommands();
 	}	
 
 	@Override
@@ -42,5 +44,9 @@ public class BukkitBan extends JavaPlugin {
 	
 	public UTFConfig getLanguage() {
 		return configmanager.getLanguageConfig();
+	}
+	
+	private void registerCommands() {
+		this.getCommand("reason").setExecutor(new ReasonCommand());
 	}
  }

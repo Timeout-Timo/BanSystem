@@ -1,7 +1,7 @@
-package de.timeout.ban.gui;
+package de.timeout.ban.gui.config;
 
 import de.timeout.ban.config.Messageable;
-
+import de.timeout.ban.gui.BukkitBan;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
@@ -16,6 +16,11 @@ public enum GUILanguage implements Messageable {
 	MESSAGE_REASON_ADD_ABORT("message.add.abort"),
 	MESSAGE_REASON_ADD_DISPLAY("message.add.display"),
 	MESSAGE_REASON_ADD_CONFIRM("message.add.confirm"),
+	MESSAGE_REASON_HELP_ADD("message.reason.help.add"),
+	MESSAGE_REASON_HELP_REMOVE("message.reason.help.remove"),
+	MESSAGE_REASON_HELP_IMPORT("message.reason.help.import"),
+	MESSAGE_REASON_HELP_CONTINUE("message.reason.help.continue"),
+	MESSAGE_ERROR_PERMISSIONS("message.error.permissions"),
 	MENU_REASON_MENU_TITLE("menu.reason.menu.title"),
 	MENU_REASON_REMOVE_TITLE("menu.reason.remove.title"),
 	MENU_REASON_FIRSTSTAGE_TITLE("menu.reason.firststage.title"),

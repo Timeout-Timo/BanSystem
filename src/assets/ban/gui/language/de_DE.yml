@@ -17,6 +17,13 @@ message:
       abort: '&cDein bis jetzt eingestellter Grund wurde &azwischengespeichert.'
       display: "&7Bitte gebe jetzt den Displayname des Grundes ein. &2Farbcodes bitte mit &6'&'&7."
       add: '&7Der Grund wurde nun &aerfolgreich hinzugefügt.'
+    help:
+      add: '&6/reason add <Grund> &8| &7Füge neue Gründe &ahinzu&7.'
+      remove: '&6/reason remove <Grund> &8| &cEntferne &7Gründe.'
+      import: '&6/reason import &8| &7Importiere Gründe aus der &5reasons.yml&7.'
+      continue: '&6/reason continue &8| &7Fahre an einem bereits angefangenen Grund &afort&7.'
+  error:
+    permissions: '&cDu hast nicht die benötigte Berechtigung, diesen Befehl auszuführen.'
 
 menu:
   reason:

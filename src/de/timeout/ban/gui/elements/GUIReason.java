@@ -1,8 +1,9 @@
-package de.timeout.ban.gui;
+package de.timeout.ban.gui.elements;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import de.timeout.ban.gui.BukkitBan;
 import de.timeout.ban.reason.Reason;
 import de.timeout.utils.ItemStackAPI;
 

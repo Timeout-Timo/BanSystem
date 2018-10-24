@@ -34,7 +34,10 @@ permissions:
     children:
       ban.reason.add: true
       ban.reason.remove: true
+      ban.reason.import: true
   ban.reason.add:
     description: Add Reasons
   ban.reason.remove:
     description: Remove Reasons
+  ban.reason.import:
+    description: Import Reasons

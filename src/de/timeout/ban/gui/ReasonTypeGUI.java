@@ -4,15 +4,16 @@ import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import de.timeout.ban.gui.config.GUILanguage;
 import de.timeout.ban.gui.elements.Button;
 import de.timeout.utils.ItemStackAPI;
 import de.timeout.utils.Materials;
 
-public class ReasonMenu extends GUI {
+public class ReasonTypeGUI extends GUI {
 		
 	private Button mute, ban;
 	
-	public ReasonMenu() {
+	public ReasonTypeGUI() {
 		Inventory inv = Bukkit.createInventory(null, 9*1, GUILanguage.MENU_REASON_MENU_TITLE.getMessage());
 		for(int i = 0; i < inv.getSize(); i++) inv.setItem(i, n);
 		
@@ -24,7 +25,7 @@ public class ReasonMenu extends GUI {
 		this.menu = inv;
 	}
 	
-	public ReasonMenu(ReasonMenu source) {
+	public ReasonTypeGUI(ReasonTypeGUI source) {
 		this.menu = source.getMenu();
 		this.ban = new Button(source.getMenu().getItem(6));
 		this.mute = new Button(source.getMenu().getItem(2));
