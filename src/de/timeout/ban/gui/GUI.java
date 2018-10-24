@@ -1,8 +1,5 @@
 package de.timeout.ban.gui;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -13,7 +10,7 @@ import de.timeout.utils.Materials;
 public class GUI {
 	
 	protected Inventory menu;
-	protected final List<Player> openPlayers = new ArrayList<Player>();
+	protected Player player;
 	protected final ItemStack n = ItemStackAPI.createItemStack(Materials.STAINED_GLASS_PANE, (short) 7, 1, "§5");
 	
 	public GUI(Inventory design) {
@@ -24,16 +21,16 @@ public class GUI {
 	
 	public void openGUI(Player player) {
 		player.openInventory(menu);
-		openPlayers.add(player);
 	}
 	
 	public void closeGUI(Player player) {
 		player.closeInventory();
-		openPlayers.remove(player);
+		player = null;
+		menu = null;
 	}
 	
 	public boolean isOpen(Player player) {
-		return openPlayers.contains(player);
+		return this.player.equals(player);
 	}
 	
 	public boolean isGUI(Inventory inv) {
@@ -43,5 +40,9 @@ public class GUI {
 			return true;
 		}
 		return false;
+	}
+	
+	public Inventory getMenu() {
+		return menu;
 	}
 }

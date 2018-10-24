@@ -26,7 +26,8 @@ public class Button {
 	}
 	
 	public void press() {
-		activate = !activate;
+		if(activate) deactivate();
+		else activate();
 	}
 	
 	public boolean isActivated() {

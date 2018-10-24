@@ -10,16 +10,17 @@ import de.timeout.utils.ItemStackAPI;
 import de.timeout.utils.Materials;
 
 public class ClockGUI extends GUI {
-	
+		
 	private ItemStack days, hours, minutes;
-	private Button perma;
+	private Button perma, confirm;
 	
 	public ClockGUI(String title) {
 		this.menu = Bukkit.createInventory(null, 9*5, title);
-		this.days = ItemStackAPI.createItemStack(Materials.PAPER, 1, "Days");
-		this.hours = ItemStackAPI.createItemStack(Materials.PAPER, 1, "Hours");
-		this.minutes = ItemStackAPI.createItemStack(Materials.PAPER, 1, "Minutes");
-		this.perma = new Button(ItemStackAPI.createItemStack(Materials.BARRIER, 1, "§cPERMANENT"));
+		this.days = ItemStackAPI.createItemStack(Materials.PAPER, 1, GUILanguage.ITEMS_CLOCK_DAYS.getMessage());
+		this.hours = ItemStackAPI.createItemStack(Materials.PAPER, 1, GUILanguage.ITEMS_CLOCK_HOURS.getMessage());
+		this.minutes = ItemStackAPI.createItemStack(Materials.PAPER, 1, GUILanguage.ITEMS_CLOCK_MINUTES.getMessage());
+		this.perma = new Button(ItemStackAPI.createItemStack(Materials.BARRIER, 1, GUILanguage.ITEMS_CLOCK_PERMANENT.getMessage()));
+		this.confirm = new Button(ItemStackAPI.createItemStack(Materials.WATCH, 1, GUILanguage.ITEMS_CLOCK_CONFIRM.getMessage()));
 		for(int i = 0; i < menu.getSize(); i++) menu.setItem(i, n);
 		
 		ItemStackAPI.setLore(days, "§70");
@@ -36,6 +37,16 @@ public class ClockGUI extends GUI {
 		menu.setItem(22, hours);
 		menu.setItem(25, minutes);
 		menu.setItem(42, perma.getItem());
+		menu.setItem(38, confirm.getItem());
+	}
+	
+	public ClockGUI(ClockGUI source) {
+		this.menu = source.getMenu();
+		this.days = source.getMenu().getItem(19);
+		this.hours = source.getMenu().getItem(22);
+		this.minutes = source.getMenu().getItem(25);
+		this.perma = new Button(source.getMenu().getItem(42));
+		this.confirm = new Button(source.getMenu().getItem(38));
 	}
 	
 	public long getTimeMillis() {
@@ -49,29 +60,40 @@ public class ClockGUI extends GUI {
 	
 	public void addMinute() {
 		ItemStackAPI.setLore(minutes, String.valueOf("§7" + (getTime(minutes) + 1)));
+		updateGUI();
 	}
 	
 	public void removeMinute() {
 		if(getTimeMillis() > 60000) ItemStackAPI.setLore(minutes, String.valueOf("§7" + (getTime(minutes) -1)));
+		updateGUI();
 	}
 	
 	public void addHour() {
 		ItemStackAPI.setLore(hours, String.valueOf("§7" + (getTime(hours) + 1)));
+		updateGUI();
 	}
 	
 	public void removeHour() {
 		if(getTimeMillis() > 60000) ItemStackAPI.setLore(hours, String.valueOf("§7" + (getTime(hours) -1)));
+		updateGUI();
 	}
 	
 	public void addDay() {
 		ItemStackAPI.setLore(days, String.valueOf("§7" + (getTime(days) + 1)));
+		updateGUI();
 	}
 	
 	public void removeDay() {
 		if(getTimeMillis() > 60000) ItemStackAPI.setLore(hours, String.valueOf("§7" + (getTime(days) -1)));
+		updateGUI();
 	}
 	
 	public void pressPermaButton() {
 		perma.press();
+		updateGUI();
+	}
+	
+	public void updateGUI() {
+		player.updateInventory();
 	}
 }

@@ -13,6 +13,10 @@ message:
     remove: 
       success: '&cDer Grund mit dem Namen %n wurde erfolgreich entfernt.'
       notfound: '&cDer eingegebenene Grund konnte nicht gfunden werden.'
+    add:
+      abort: '&cDein bis jetzt eingestellter Grund wurde &azwischengespeichert.'
+      display: "&7Bitte gebe jetzt den Displayname des Grundes ein. &2Farbcodes bitte mit &6'&'&7."
+      add: '&7Der Grund wurde nun &aerfolgreich hinzugefügt.'
 
 menu:
   reason:
@@ -31,8 +35,23 @@ menu:
     thirdstage:
       # Der Title des ClockMenus
       title: '&6Strafzeit auf finaler Stufe'
+    firstline:
+      # Der Titel der Ersten Strafgrenze
+      title: '&7Erste &5Strafgrenze'
+    secondline:
+      # Der Titel der zweiten Strafgrenze
+      title: '&7Zweite &5Strafgrenze'
+    points:
+      # Der Titel des Punkteanstieg
+      title: '&6Anstieg der Punkte pro Straftat'
     
 items:
+  clock:
+    days: '&5Tage'
+    hours: '&5Stunden'
+    minutes: '&5Minuten'
+    permanent: '&cPermanent'
+    confirm: '&aBestätigen'
   reason:
     menu:
       # Name des Mute-Reason Items
