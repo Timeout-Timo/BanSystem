@@ -25,7 +25,7 @@ public class GUI {
 	
 	public void closeGUI(Player player) {
 		player.closeInventory();
-		player = null;
+		this.player = null;
 		menu = null;
 	}
 	

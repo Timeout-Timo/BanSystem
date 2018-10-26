@@ -28,6 +28,13 @@ permissions:
       ban.ignore: true
   ban.ban:
     description: The Ban-Permission
+    children:
+      ban.ban.perma: true
+      ban.ban.custom: false
+  ban.ban.perma:
+    description: Bans a player permanent
+  ban.ban.custom:
+    description: Can use the Custom-Menu
   ban.ignore:
     description: The Ignore-Permission
   ban.mute:

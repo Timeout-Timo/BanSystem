@@ -51,7 +51,7 @@ public class ClockGUI extends GUI {
 	}
 	
 	public long getTimeMillis() {
-		return (getTime(days) * 24L) * (getTime(hours) * 60L) * (getTime(minutes) * 60L) * 1000L;
+		return perma.isActivated() ? -1L : (getTime(days) * 24L) * (getTime(hours) * 60L) * (getTime(minutes) * 60L) * 1000L;
 	}
 	
 	private long getTime(ItemStack item) {
@@ -92,6 +92,10 @@ public class ClockGUI extends GUI {
 	public void pressPermaButton() {
 		perma.press();
 		updateGUI();
+	}
+	
+	public boolean isPermaButton(ItemStack item) {
+		return perma.getItem().isSimilar(item);
 	}
 	
 	public void updateGUI() {

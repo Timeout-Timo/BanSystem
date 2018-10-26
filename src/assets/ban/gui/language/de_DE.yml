@@ -11,8 +11,8 @@ message:
   reason:
     import: '&7Die Gründe wurden erfolgreich von der &6Datei ´&7in die &fMySQL-Datenbank übertragen&7.'
     remove: 
-      success: '&cDer Grund mit dem Namen %n wurde erfolgreich entfernt.'
-      notfound: '&cDer eingegebenene Grund konnte nicht gfunden werden.'
+      success: '&cDer Grund mit dem Namen %r wurde erfolgreich entfernt.'
+      notfound: '&cDer eingegebenene Grund konnte nicht gefunden werden.'
     add:
       abort: '&cDein bis jetzt eingestellter Grund wurde &azwischengespeichert.'
       display: "&7Bitte gebe jetzt den Displayname des Grundes ein. &2Farbcodes bitte mit &6'&'&7."
@@ -56,6 +56,7 @@ menu:
       title: '&6Anstieg der Punkte pro Straftat'
   ban:
     title: '&c%p bannen?'
+    customban: '&c%p erweitert bannen?'
     
 items:
   clock:

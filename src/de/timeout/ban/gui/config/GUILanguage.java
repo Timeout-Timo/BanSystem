@@ -31,6 +31,7 @@ public enum GUILanguage implements Messageable {
 	MENU_REASON_SECONDLINE_TITLE("menu.reason.secondline.title"),
 	MENU_REASON_POINTS_TITLE("menu.reason.points.title"),
 	MENU_BAN_TITLE("menu.ban.title"),
+	MENU_BAN_CUSTOMBAN("menu.ban.customban"),
 	ITEMS_CLOCK_DAYS("items.clock.days"),
 	ITEMS_CLOCK_HOURS("items.clock.hours"),
 	ITEMS_CLOCK_MINUTES("items.clock.minutes"),

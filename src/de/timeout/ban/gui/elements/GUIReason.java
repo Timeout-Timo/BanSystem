@@ -1,5 +1,10 @@
 package de.timeout.ban.gui.elements;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -9,11 +14,27 @@ import de.timeout.utils.ItemStackAPI;
 
 public class GUIReason extends Reason {
 	
+	private static final BukkitBan main = BukkitBan.plugin;
+	
 	private ItemStack item;
 
 	public GUIReason(String name, ItemStack item) {
 		super(name);
 		this.item = item;
+	}
+	
+	public static GUIReason getReasonFromItemStack(ItemStack item) {
+		try(PreparedStatement ps = main.getMySQL().getConnection().prepareStatement("SELECT * FROM Reasons WHERE Item = ?")) {
+			ps.setString(1, ItemStackAPI.encodeItemStack(item));
+			try(ResultSet rs = ps.executeQuery()) {
+				return new GUIReason(rs.getString("Name"), rs.getString("Display"), ReasonType.valueOf(rs.getString("Type")),
+						rs.getLong("FirstStage"), rs.getLong("SecondStage"), rs.getLong("ThirdStage"), rs.getInt("FirstLine"),
+						rs.getInt("SecondLine"), rs.getInt("Points"), item);
+			}
+		} catch(SQLException e) {
+			main.getLogger().log(Level.SEVERE, "Could not connect to MySQL-Database", e);
+		}
+		return null;
 	}
 
 	public GUIReason(String name, String prefix, ReasonType type, long firstStage, long secondStage, long thirdStage,

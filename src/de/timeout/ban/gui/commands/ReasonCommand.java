@@ -80,7 +80,7 @@ public class ReasonCommand implements CommandExecutor, Listener, TabCompleter {
 					if(p.hasPermission("ban.reason.remove")) {
 						ItemStack middle = ItemStackAPI.decodeItemStack((String) main.getMySQL().getValue("SELECT Item FROM Reason WHERE Name = ?", name));
 						if(middle != null) {
-							ConfirmGUI gui = new ConfirmGUI(middle, GUILanguage.MENU_REASON_MENU_TITLE.getMessage(),
+							ConfirmGUI gui = new ConfirmGUI(middle, GUILanguage.MENU_REASON_MENU_TITLE.getMessage().replaceAll("%r", middle.getItemMeta().getDisplayName()),
 									GUILanguage.ITEMS_REASON_REMOVE_YES.getMessage(), GUILanguage.ITEMS_REASON_REMOVE_YES.getMessage());
 							gui.openGUI(p);
 							newReasons.put(p, new GUIReason(name, gui.getMiddle()));
@@ -144,6 +144,9 @@ public class ReasonCommand implements CommandExecutor, Listener, TabCompleter {
 							main.getMySQL().delete("DELETE FROM Reasons WHERE Name = ?", newReasons.get(p).getName());
 						openGUI.closeGUI(p);
 						openGUIs.remove(p);
+						p.sendMessage(GUILanguage.PREFIX.getMessage() + GUILanguage.MESSAGE_REASON_REMOVE_SUCCESS.getMessage().replaceAll("%r",
+								newReasons.get(p).getItem().getItemMeta().getDisplayName()));
+						p.playSound(p.getLocation(), Sounds.ANVIL_BREAK.bukkitSound(), 1F, 1F);
 					}
 				} else if(typeMenu.isGUI(inv)) {
 					if(typeMenu.isBanButton(item)) {
